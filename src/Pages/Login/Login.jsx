@@ -1,4 +1,5 @@
 import { useContext, useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   LoadCanvasTemplate,
   loadCaptchaEnginge,
@@ -108,6 +109,14 @@ const Login = () => {
                 />
               </div>
             </form>
+            <p className="p-3">
+              <small>
+                New Here?{' '}
+                <Link className="text-orange-700" to="/signUp">
+                  Create an account
+                </Link>{' '}
+              </small>
+            </p>
           </div>
         </div>
       </div>
