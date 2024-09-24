@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { FaCartFlatbed } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
@@ -25,10 +26,18 @@ const NavBar = () => {
       <li>
         <Link to="/secret">Secret</Link>
       </li>
+      <li>
+        <Link to="/">
+          <button className="btn">
+            <FaCartFlatbed />
+            <div className="badge badge-secondary">+0</div>
+          </button>
+        </Link>
+      </li>
 
       {user ? (
         <>
-          <span>{user?.displayName}</span>
+          {/* <span>{user?.displayName}</span> */}
           <button onClick={handleLogOut} className="btn btn-ghost">
             LogOut
           </button>
