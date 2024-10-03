@@ -12,14 +12,13 @@ import {
 } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 // import useAdmin from '../hooks/useAdmin';
+import useAdmin from '../hooks/useAdmin';
 import useCart from '../hooks/useCart';
 
 const Dashboard = () => {
   const [cart] = useCart();
-
-  // TODO: get isAdmin value from the database
-  // const [isAdmin] = useAdmin();
-  const isAdmin = true;
+  // get isAdmin value from the database
+  const [isAdmin] = useAdmin();
 
   return (
     <div className="flex">

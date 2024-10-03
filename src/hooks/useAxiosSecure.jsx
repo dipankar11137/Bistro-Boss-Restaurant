@@ -13,7 +13,7 @@ const useAxiosSecure = () => {
     function (config) {
       const token = localStorage.getItem('access-token');
       config.headers.authorization = `Bearer ${token}`;
-      console.log('dado aice', token);
+      // console.log('dado aice', token);
       return config;
     },
     function (error) {
@@ -27,7 +27,7 @@ const useAxiosSecure = () => {
       return response;
     },
     async error => {
-      console.log('status Error', error);
+      // console.log('status Error', error);
       const status = error.response.status;
       // for 401 or 403 logout the user and move the user to the login
       if (status === 401 || status === 403) {
