@@ -23,7 +23,7 @@ const SignUp = () => {
     console.log(data);
     createUser(data.email, data.password).then(result => {
       const loggedUser = result.user;
-      console.log(loggedUser);
+      console.log('dado', loggedUser);
       updateUserProfile(data.name, data.photoURL)
         .then(() => {
           const userInfo = {
@@ -32,6 +32,7 @@ const SignUp = () => {
             img: data.photoURL,
           };
           axiosPublic.post('/users', userInfo).then(res => {
+            console.log('dado2', res.data);
             if (res.data.insertedId) {
               reset();
               Swal.fire({
